@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import SketchDisplay from './components/SketchDisplay';
+import Editor from './components/Editor/Editor';
+import { useState } from 'react';
 
 function App() {
+  const [code, setCode] = useState('');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Editor setCode={setCode}/>
+      <SketchDisplay code={code}/>
     </div>
   );
 }
